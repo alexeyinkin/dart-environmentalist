@@ -7,14 +7,20 @@ class GoogleApplicationCredentialsEnvironment {
   const GoogleApplicationCredentialsEnvironment({
     required this.path,
     //
+    required this.audience,
     required this.clientEmail,
     required this.clientId,
     required this.privateKeyId,
     required this.projectId,
+    required this.serviceAccountImpersonationUrl,
+    required this.subjectTokenType,
     required this.type,
   });
 
   final String path;
+
+  @JsonKey(includeIfNull: false)
+  final String? audience;
 
   @JsonKey(includeIfNull: false)
   final String? clientEmail;
@@ -27,6 +33,12 @@ class GoogleApplicationCredentialsEnvironment {
 
   @JsonKey(includeIfNull: false)
   final String? projectId;
+
+  @JsonKey(includeIfNull: false)
+  final String? serviceAccountImpersonationUrl;
+
+  @JsonKey(includeIfNull: false)
+  final String? subjectTokenType;
 
   @JsonKey(includeIfNull: false)
   final String? type;

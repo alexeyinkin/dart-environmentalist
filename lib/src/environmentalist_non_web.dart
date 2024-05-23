@@ -55,10 +55,13 @@ GoogleApplicationCredentialsEnvironment? getGoogleApplicationCredentials() {
 
     return GoogleApplicationCredentialsEnvironment(
       path: path,
+      audience: map['audience'],
       clientEmail: map['client_email'],
       clientId: map['client_id'],
       privateKeyId: map['private_key_id'],
       projectId: map['project_id'],
+      serviceAccountImpersonationUrl: map['service_account_impersonation_url'],
+      subjectTokenType: map['subject_token_type'],
       type: map['type'],
     );
   } catch (ex) {
