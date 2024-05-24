@@ -6,24 +6,23 @@ part of 'google_application_credentials.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-GoogleApplicationCredentialsEnvironment
-    _$GoogleApplicationCredentialsEnvironmentFromJson(
-            Map<String, dynamic> json) =>
-        GoogleApplicationCredentialsEnvironment(
-          path: json['path'] as String,
-          audience: json['audience'] as String?,
-          clientEmail: json['clientEmail'] as String?,
-          clientId: json['clientId'] as String?,
-          privateKeyId: json['privateKeyId'] as String?,
-          projectId: json['projectId'] as String?,
-          serviceAccountImpersonationUrl:
-              json['serviceAccountImpersonationUrl'] as String?,
-          subjectTokenType: json['subjectTokenType'] as String?,
-          type: json['type'] as String?,
-        );
+GoogleApplicationCredentials _$GoogleApplicationCredentialsFromJson(
+        Map<String, dynamic> json) =>
+    GoogleApplicationCredentials(
+      path: json['path'] as String,
+      audience: json['audience'] as String?,
+      clientEmail: json['clientEmail'] as String?,
+      clientId: json['clientId'] as String?,
+      privateKeyId: json['privateKeyId'] as String?,
+      projectId: json['projectId'] as String?,
+      serviceAccountImpersonationUrl:
+          json['serviceAccountImpersonationUrl'] as String?,
+      subjectTokenType: json['subjectTokenType'] as String?,
+      type: json['type'] as String?,
+    );
 
-Map<String, dynamic> _$GoogleApplicationCredentialsEnvironmentToJson(
-    GoogleApplicationCredentialsEnvironment instance) {
+Map<String, dynamic> _$GoogleApplicationCredentialsToJson(
+    GoogleApplicationCredentials instance) {
   final val = <String, dynamic>{
     'path': instance.path,
   };

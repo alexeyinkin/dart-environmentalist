@@ -1,3 +1,5 @@
+// ignore_for_file: public_member_api_docs
+
 import 'models/github.dart';
 import 'models/google_application_credentials.dart';
 import 'models/kubernetes.dart';
@@ -5,8 +7,7 @@ import 'models/platform_enum.dart';
 
 GitHubEnvironment? getGitHub() => null;
 
-GoogleApplicationCredentialsEnvironment? getGoogleApplicationCredentials() =>
-    null;
+GoogleApplicationCredentials? getGoogleApplicationCredentials() => null;
 
 Future<List<String>?> getIps() async => null;
 

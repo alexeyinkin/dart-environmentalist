@@ -58,7 +58,7 @@ Following are pretty-printed outputs for environments:
     "10.28.1.2"
   ],
   "kubernetes": {
-    "hostname": "gh-repository-scanner-d9c5d4dc-qf524"
+    "hostname": "my-deployment-name-d9c5d4dc-qf524"
   },
   "pid": 1,
   "platform": "linux",
@@ -88,6 +88,9 @@ Following are pretty-printed outputs for environments:
   },
   "googleApplicationCredentials": {
     "path": "/home/runner/work/repository-name/repository-name/gha-creds-db27f0e3297f59e0.json",
+    "audience": "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/github/providers/github",
+    "serviceAccountImpersonationUrl": "https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/name@project-id.iam.gserviceaccount.com:generateAccessToken",
+    "subjectTokenType": "urn:ietf:params:oauth:token-type:jwt",
     "type": "external_account"
   },
   "ips": [

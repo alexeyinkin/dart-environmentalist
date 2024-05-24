@@ -1,3 +1,5 @@
+// ignore_for_file: public_member_api_docs
+
 import 'dart:convert';
 import 'dart:io';
 
@@ -43,7 +45,7 @@ GitHubEnvironment? getGitHub() {
   );
 }
 
-GoogleApplicationCredentialsEnvironment? getGoogleApplicationCredentials() {
+GoogleApplicationCredentials? getGoogleApplicationCredentials() {
   final path = Platform.environment['GOOGLE_APPLICATION_CREDENTIALS'];
   if (path == null) {
     return null;
@@ -52,8 +54,12 @@ GoogleApplicationCredentialsEnvironment? getGoogleApplicationCredentials() {
   try {
     final content = File(path).readAsStringSync();
     final map = jsonDecode(content);
+    if (map is! Map) {
+      // TODO(alexeyinkin): Return the error information.
+      return null;
+    }
 
-    return GoogleApplicationCredentialsEnvironment(
+    return GoogleApplicationCredentials(
       path: path,
       audience: map['audience'],
       clientEmail: map['client_email'],
@@ -64,6 +70,7 @@ GoogleApplicationCredentialsEnvironment? getGoogleApplicationCredentials() {
       subjectTokenType: map['subject_token_type'],
       type: map['type'],
     );
+    // ignore: avoid_catches_without_on_clauses
   } catch (ex) {
     return null;
   }

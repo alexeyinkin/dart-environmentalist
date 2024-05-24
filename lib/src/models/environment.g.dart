@@ -12,7 +12,7 @@ Environment _$EnvironmentFromJson(Map<String, dynamic> json) => Environment(
           : GitHubEnvironment.fromJson(json['github'] as Map<String, dynamic>),
       googleApplicationCredentials: json['googleApplicationCredentials'] == null
           ? null
-          : GoogleApplicationCredentialsEnvironment.fromJson(
+          : GoogleApplicationCredentials.fromJson(
               json['googleApplicationCredentials'] as Map<String, dynamic>),
       ips: (json['ips'] as List<dynamic>?)?.map((e) => e as String).toList(),
       kubernetes: json['kubernetes'] == null

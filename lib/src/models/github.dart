@@ -28,6 +28,7 @@ part 'github.g.dart';
 ///   GITHUB_STEP_SUMMARY
 @JsonSerializable()
 class GitHubEnvironment {
+  // ignore: public_member_api_docs
   const GitHubEnvironment({
     required this.actor,
     required this.eventName,
@@ -44,47 +45,62 @@ class GitHubEnvironment {
     required this.workflowSha,
   });
 
+  /// The contents of `GITHUB_ACTOR` environment variable.
   @JsonKey(includeIfNull: false)
   final String? actor;
 
+  /// The contents of `GITHUB_EVENT_NAME` environment variable.
   @JsonKey(includeIfNull: false)
   final String? eventName;
 
+  /// The contents of `GITHUB_JOB` environment variable.
   @JsonKey(includeIfNull: false)
   final String? job;
 
+  /// The contents of `GITHUB_REF` environment variable.
   @JsonKey(includeIfNull: false)
   final String? ref;
 
+  /// The contents of `GITHUB_REPOSITORY` environment variable.
   @JsonKey(includeIfNull: false)
   final String? repository;
 
+  /// The contents of `GITHUB_RUN_ATTEMPT` environment variable.
   @JsonKey(includeIfNull: false)
   final int? runAttempt;
 
+  /// The contents of `GITHUB_RUN_ID` environment variable.
   @JsonKey(includeIfNull: false)
   final int? runId;
 
+  /// The contents of `GITHUB_RUN_NUMBER` environment variable.
   @JsonKey(includeIfNull: false)
   final int? runNumber;
 
+  /// The contents of `GITHUB_SHA` environment variable.
   @JsonKey(includeIfNull: false)
   final String? sha;
 
+  /// The contents of `GITHUB_TRIGGERING_ACTOR` environment variable.
   @JsonKey(includeIfNull: false)
   final String? triggeringActor;
 
+  /// The contents of `GITHUB_WORKFLOW` environment variable.
   @JsonKey(includeIfNull: false)
   final String? workflow;
 
+  /// The contents of `GITHUB_WORKFLOW_REF` environment variable.
   @JsonKey(includeIfNull: false)
   final String? workflowRef;
 
+  /// The contents of `GITHUB_WORKFLOW_SHA` environment variable.
   @JsonKey(includeIfNull: false)
   final String? workflowSha;
 
+  // ignore: public_member_api_docs
   factory GitHubEnvironment.fromJson(Map<String, dynamic> map) =>
       _$GitHubEnvironmentFromJson(map);
 
+  // ignore: public_member_api_docs
   Map<String, dynamic> toJson() => _$GitHubEnvironmentToJson(this);
 }
